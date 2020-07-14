@@ -28,10 +28,10 @@ def generate_query_ner_dataset(source_file_path, dump_file_path, entity_sign="ne
     dataset_name=None, query_sign="default"):
     """
     Args:
-        source_data_file: /data/genia/train.word.json | /data/msra/train.char.bmes
-        dump_data_file: /data/genia-mrc/train.mrc.json | /data/msra-mrc/train.mrc.json
-        dataset_name: one in ["en_ontonotes5", "en_conll03", ]
-        entity_sign: one of ["nested", "flat"]
+        source_data_file: /data/genia/train.word.json | /data/msra/train.char.bmes #输入文件
+        dump_data_file: /data/genia-mrc/train.mrc.json | /data/msra-mrc/train.mrc.json #输出文件
+        dataset_name: one in ["en_ontonotes5", "en_conll03", ] #数据集名称
+        entity_sign: one of ["nested", "flat"] #实体标记类型，nested or flat
         query_sign: defualt is "default"
     Desc:
         pass 

@@ -33,9 +33,9 @@ def test_nested_ner():
 def test_flat_ner():
     source_file_path = os.path.join(ROOT_PATH, "data_preprocess/test/dev_msra.bmes")
     target_file_path = os.path.join(ROOT_PATH, "data_preprocess/test/mrc-dev_msra.json")
-    d_repo ="/data/nfsdata2/xiaoya/data_repo/msra_ner"
-    source_file_path = os.path.join(d_repo, "bmes.test")
-    target_file_path = os.path.join(d_repo, "mrc-ner.test") 
+    # d_repo ="./data/msra_ner"
+    # source_file_path = os.path.join(d_repo, "bmes.test")
+    # target_file_path = os.path.join(d_repo, "mrc-ner.test")
     entity_sign = "flat"
     dataset_name = "zh_msra"
     query_sign = "default"
@@ -45,5 +45,5 @@ def test_flat_ner():
 
 
 if __name__ == "__main__":
-    test_nested_ner()
-    test_flat_ner() 
+    test_nested_ner() #嵌套NER
+    test_flat_ner()  #扁平NER
