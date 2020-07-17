@@ -48,11 +48,11 @@ def mask_span_f1(batch_preds, batch_labels, batch_masks=None, label_list: List[s
         preds = [label_list[idx] if idx < len(label_list) else "O" for idx in preds]
         labels = [label_list[idx] for idx in labels]
 
-        pred_tags: List[Tag] = bmes_decode(char_label_list=[(fake_term, pred) for pred in preds])[1]
-        golden_tags: List[Tag] = bmes_decode(char_label_list=[(fake_term, label) for label in labels])[1]
+        pred_tags = bmes_decode(char_label_list=[(fake_term, pred) for pred in preds])[1]
+        golden_tags = bmes_decode(char_label_list=[(fake_term, label) for label in labels])[1]
 
-        pred_set: Set[Tuple] = set((tag.begin, tag.end, tag.tag) for tag in pred_tags)
-        golden_set: Set[Tuple] = set((tag.begin, tag.end, tag.tag) for tag in golden_tags)
+        pred_set = set((tag.begin, tag.end, tag.tag) for tag in pred_tags)
+        golden_set = set((tag.begin, tag.end, tag.tag) for tag in golden_tags)
         pred_tags = sorted([list(s) for s in pred_set], key=lambda x: x[0])
         golden_tags = sorted([list(s) for s in golden_set], key=lambda x: x[0])
         outputs.append(
@@ -80,7 +80,7 @@ def mask_span_f1(batch_preds, batch_labels, batch_masks=None, label_list: List[s
 
     if output_path:
         json.dump(outputs, open(output_path, "w"), indent=4, sort_keys=True, ensure_ascii=False)
-        print(f"Wrote visualization to {output_path}")
+        print("Wrote visualization to {}".format(output_path))
 
     return {
         "span-precision": precision,

@@ -70,7 +70,7 @@ class MRCNERDataLoader(object):
         
         features = self.convert_examples_to_features(data_sign=data_sign)
     
-        print(f"{len(features)} {data_sign} data loaded")
+        print("{} {} data loaded".format(str(len(features)), data_sign))
         input_ids = torch.tensor([f.input_ids for f in features], dtype=torch.long)
         input_mask = torch.tensor([f.input_mask for f in features], dtype=torch.long)
         segment_ids = torch.tensor([f.segment_ids for f in features], dtype=torch.long)

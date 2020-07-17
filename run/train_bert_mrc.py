@@ -116,7 +116,7 @@ def load_data(config):
 
 
 def load_model(config, num_train_steps, label_list):
-    device = torch.device("cuda") 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
     n_gpu = config.n_gpu
     model = BertQueryNER(config, ) 
     model.to(device)

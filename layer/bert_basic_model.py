@@ -35,7 +35,7 @@ PRETRAINED_MODEL_ARCHIVE_MAP = {
 logger = logging.getLogger(__name__)
 
 CONFIG_NAME = "bert_config.json"
-WEIGHTS_NAME = "pytorch_model.bin"
+WEIGHTS_NAME = "pytorch_chinese_bert_model.bin"
 
 
 def gelu(x):
